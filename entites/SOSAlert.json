@@ -1,0 +1,58 @@
+{
+  "name": "SOSAlert",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "user_name": {
+      "type": "string"
+    },
+    "ride_id": {
+      "type": "string"
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number"
+        },
+        "lng": {
+          "type": "number"
+        },
+        "address": {
+          "type": "string"
+        }
+      }
+    },
+    "alert_type": {
+      "type": "string",
+      "enum": [
+        "sos",
+        "route_deviation",
+        "panic",
+        "accident"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "resolved",
+        "false_alarm"
+      ],
+      "default": "active"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "contacted_emergency": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "user_id",
+    "alert_type"
+  ]
+}

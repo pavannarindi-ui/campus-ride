@@ -1,0 +1,46 @@
+{
+  "name": "EcoImpact",
+  "type": "object",
+  "properties": {
+    "ride_id": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "passengers_count": {
+      "type": "number"
+    },
+    "distance_km": {
+      "type": "number"
+    },
+    "vehicles_saved": {
+      "type": "number",
+      "description": "Number of individual vehicles saved"
+    },
+    "co2_saved_kg": {
+      "type": "number",
+      "description": "CO2 emissions saved in kg"
+    },
+    "fuel_saved_liters": {
+      "type": "number"
+    },
+    "cost_saved": {
+      "type": "number",
+      "description": "Total cost saved by passengers"
+    },
+    "ride_type": {
+      "type": "string",
+      "enum": [
+        "pooled",
+        "shared",
+        "solo"
+      ]
+    }
+  },
+  "required": [
+    "ride_id",
+    "date"
+  ]
+}

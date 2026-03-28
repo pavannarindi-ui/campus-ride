@@ -1,0 +1,32 @@
+{
+  "name": "ChatMessage",
+  "type": "object",
+  "properties": {
+    "ride_id": {
+      "type": "string"
+    },
+    "sender_id": {
+      "type": "string"
+    },
+    "sender_name": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "message_type": {
+      "type": "string",
+      "enum": [
+        "text",
+        "location",
+        "system"
+      ],
+      "default": "text"
+    }
+  },
+  "required": [
+    "ride_id",
+    "sender_id",
+    "message"
+  ]
+}

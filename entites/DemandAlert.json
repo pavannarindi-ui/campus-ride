@@ -1,0 +1,69 @@
+{
+  "name": "DemandAlert",
+  "type": "object",
+  "properties": {
+    "alert_type": {
+      "type": "string",
+      "enum": [
+        "high_demand",
+        "peak_hours",
+        "event_based",
+        "weather_related"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "time_window": {
+      "type": "object",
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "end": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "demand_level": {
+      "type": "string",
+      "enum": [
+        "moderate",
+        "high",
+        "critical"
+      ],
+      "default": "moderate"
+    },
+    "estimated_requests": {
+      "type": "number"
+    },
+    "available_drivers": {
+      "type": "number"
+    },
+    "surge_multiplier": {
+      "type": "number",
+      "default": 1.0
+    },
+    "notified_drivers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "resolved",
+        "expired"
+      ],
+      "default": "active"
+    }
+  },
+  "required": [
+    "alert_type",
+    "location"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "name": "RouteDeviation",
+  "type": "object",
+  "properties": {
+    "ride_id": {
+      "type": "string"
+    },
+    "driver_id": {
+      "type": "string"
+    },
+    "deviation_type": {
+      "type": "string",
+      "enum": [
+        "route_change",
+        "unexpected_stop",
+        "speed_anomaly",
+        "location_anomaly"
+      ],
+      "description": "Type of deviation detected"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "default": "medium"
+    },
+    "deviation_location": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number"
+        },
+        "lng": {
+          "type": "number"
+        }
+      }
+    },
+    "expected_route": {
+      "type": "string"
+    },
+    "actual_route": {
+      "type": "string"
+    },
+    "distance_deviation": {
+      "type": "number",
+      "description": "Deviation in kilometers"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "detected",
+        "investigating",
+        "resolved",
+        "escalated"
+      ],
+      "default": "detected"
+    },
+    "alert_sent": {
+      "type": "boolean",
+      "default": false
+    },
+    "passengers_notified": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "ride_id",
+    "driver_id",
+    "deviation_type"
+  ]
+}

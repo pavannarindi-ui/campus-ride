@@ -1,0 +1,72 @@
+{
+  "name": "Booking",
+  "type": "object",
+  "properties": {
+    "ride_id": {
+      "type": "string"
+    },
+    "passenger_id": {
+      "type": "string"
+    },
+    "passenger_name": {
+      "type": "string"
+    },
+    "driver_id": {
+      "type": "string"
+    },
+    "seats_booked": {
+      "type": "number"
+    },
+    "pickup_point": {
+      "type": "string"
+    },
+    "drop_point": {
+      "type": "string"
+    },
+    "total_amount": {
+      "type": "number"
+    },
+    "payment_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "paid",
+        "refunded"
+      ],
+      "default": "pending"
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "upi",
+        "wallet",
+        "cash"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "confirmed",
+        "cancelled",
+        "completed",
+        "no_show"
+      ],
+      "default": "confirmed"
+    },
+    "rating_given": {
+      "type": "number"
+    },
+    "review": {
+      "type": "string"
+    },
+    "otp": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "ride_id",
+    "passenger_id",
+    "seats_booked",
+    "total_amount"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "name": "CancellationPenalty",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "booking_id": {
+      "type": "string"
+    },
+    "ride_id": {
+      "type": "string"
+    },
+    "cancellation_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ride_departure_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "hours_before_departure": {
+      "type": "number"
+    },
+    "penalty_type": {
+      "type": "string",
+      "enum": [
+        "warning",
+        "score_deduction",
+        "temporary_ban",
+        "fee"
+      ],
+      "default": "warning"
+    },
+    "penalty_amount": {
+      "type": "number",
+      "default": 0,
+      "description": "Penalty fee if applicable"
+    },
+    "trust_score_deduction": {
+      "type": "number",
+      "default": 0
+    },
+    "ban_duration_hours": {
+      "type": "number",
+      "default": 0
+    },
+    "reason": {
+      "type": "string"
+    },
+    "is_paid": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "user_id",
+    "booking_id",
+    "ride_id"
+  ]
+}

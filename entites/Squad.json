@@ -1,0 +1,83 @@
+{
+  "name": "Squad",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "destination": {
+      "type": "string"
+    },
+    "destination_type": {
+      "type": "string",
+      "enum": [
+        "mall",
+        "temple",
+        "station",
+        "airport",
+        "hospital",
+        "other"
+      ]
+    },
+    "pickup_point": {
+      "type": "string"
+    },
+    "departure_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "max_members": {
+      "type": "number",
+      "default": 4
+    },
+    "current_members": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "vehicle_preference": {
+      "type": "string",
+      "enum": [
+        "auto",
+        "cab"
+      ]
+    },
+    "estimated_cost": {
+      "type": "number"
+    },
+    "cost_per_person": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "forming",
+        "ready",
+        "in_progress",
+        "completed"
+      ],
+      "default": "forming"
+    },
+    "created_by": {
+      "type": "string"
+    },
+    "women_only": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "destination",
+    "pickup_point",
+    "departure_time"
+  ]
+}

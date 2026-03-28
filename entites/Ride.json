@@ -1,0 +1,182 @@
+{
+  "name": "Ride",
+  "type": "object",
+  "properties": {
+    "driver_id": {
+      "type": "string",
+      "description": "User ID of the driver"
+    },
+    "driver_name": {
+      "type": "string"
+    },
+    "driver_photo": {
+      "type": "string"
+    },
+    "origin": {
+      "type": "string"
+    },
+    "origin_coords": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number"
+        },
+        "lng": {
+          "type": "number"
+        }
+      }
+    },
+    "destination": {
+      "type": "string"
+    },
+    "destination_coords": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number"
+        },
+        "lng": {
+          "type": "number"
+        }
+      }
+    },
+    "waypoints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string"
+          },
+          "coords": {
+            "type": "object",
+            "properties": {
+              "lat": {
+                "type": "number"
+              },
+              "lng": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "departure_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "total_seats": {
+      "type": "number"
+    },
+    "available_seats": {
+      "type": "number"
+    },
+    "price_per_seat": {
+      "type": "number"
+    },
+    "vehicle_type": {
+      "type": "string",
+      "enum": [
+        "car",
+        "suv",
+        "auto",
+        "bike"
+      ]
+    },
+    "vehicle_name": {
+      "type": "string"
+    },
+    "vehicle_number": {
+      "type": "string"
+    },
+    "ride_type": {
+      "type": "string",
+      "enum": [
+        "intercity",
+        "local",
+        "squad"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "in_progress",
+        "completed",
+        "cancelled"
+      ],
+      "default": "scheduled"
+    },
+    "women_only": {
+      "type": "boolean",
+      "default": false
+    },
+    "ac_available": {
+      "type": "boolean",
+      "default": true
+    },
+    "luggage_allowed": {
+      "type": "boolean",
+      "default": true
+    },
+    "music_preference": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "passengers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "seats_booked": {
+            "type": "number"
+          },
+          "pickup_point": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "current_location": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number"
+        },
+        "lng": {
+          "type": "number"
+        }
+      }
+    },
+    "is_recurring": {
+      "type": "boolean",
+      "default": false
+    },
+    "recurring_days": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "driver_id",
+    "origin",
+    "destination",
+    "departure_time",
+    "total_seats",
+    "price_per_seat"
+  ]
+}

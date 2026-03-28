@@ -1,0 +1,40 @@
+{
+  "name": "RideOTP",
+  "type": "object",
+  "properties": {
+    "ride_id": {
+      "type": "string"
+    },
+    "booking_id": {
+      "type": "string"
+    },
+    "start_otp": {
+      "type": "string",
+      "description": "OTP to start ride"
+    },
+    "end_otp": {
+      "type": "string",
+      "description": "OTP to complete ride"
+    },
+    "start_verified": {
+      "type": "boolean",
+      "default": false
+    },
+    "end_verified": {
+      "type": "boolean",
+      "default": false
+    },
+    "start_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "end_time": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "ride_id",
+    "booking_id"
+  ]
+}

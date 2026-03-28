@@ -1,0 +1,77 @@
+{
+  "name": "TrustScore",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "User ID"
+    },
+    "overall_score": {
+      "type": "number",
+      "default": 100,
+      "description": "Overall trust score (0-100)"
+    },
+    "reliability_score": {
+      "type": "number",
+      "default": 100,
+      "description": "Ride completion reliability"
+    },
+    "cancellation_score": {
+      "type": "number",
+      "default": 100,
+      "description": "Score based on cancellation behavior"
+    },
+    "safety_score": {
+      "type": "number",
+      "default": 100,
+      "description": "Safety feedback score"
+    },
+    "verification_level": {
+      "type": "string",
+      "enum": [
+        "unverified",
+        "basic",
+        "verified",
+        "trusted"
+      ],
+      "default": "basic",
+      "description": "Verification level"
+    },
+    "total_rides": {
+      "type": "number",
+      "default": 0
+    },
+    "completed_rides": {
+      "type": "number",
+      "default": 0
+    },
+    "cancelled_rides": {
+      "type": "number",
+      "default": 0
+    },
+    "late_cancellations": {
+      "type": "number",
+      "default": 0,
+      "description": "Cancellations within 2 hours"
+    },
+    "positive_feedbacks": {
+      "type": "number",
+      "default": 0
+    },
+    "negative_feedbacks": {
+      "type": "number",
+      "default": 0
+    },
+    "safety_incidents": {
+      "type": "number",
+      "default": 0
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "user_id"
+  ]
+}
