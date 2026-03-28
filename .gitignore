@@ -1,7 +1,11 @@
 #env
 .env
 .env.*
-
+node_modules/
+.env
+dist/
+build/
+*.log
 # Logs
 logs
 *.log
